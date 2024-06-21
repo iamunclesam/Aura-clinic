@@ -51,6 +51,8 @@ const ApiService = {
   //Auth endpoints
   userLogin: (data) => api.post(API_ROUTES.Auth.login, data),
 
+  admitPatient: (data, doctorId) => api.post(`${API_ROUTES.Admin.admitPatient}?doctorId=${doctorId}`, data),
+
   // Doctor endpoints
   createDoctor: (doctorData) => api.post(API_ROUTES.Doctor.createDoctor, doctorData),
   getDoctorById: (id) => api.get(API_ROUTES.Doctor.getDoctorById(id)),
@@ -93,7 +95,7 @@ const ApiService = {
 
   // Ward endpoints
   createWard: (wardData) => api.post(API_ROUTES.Ward.createWard, wardData),
-  getWardById: (id) => api.get(API_ROUTES.Ward.getWardById(id)),
+  getWardByDepartment: (id) => api.get(API_ROUTES.Ward.getWardByDepartment(id)),
   updateWardById: (id, wardData) => api.put(API_ROUTES.Ward.updateWardById(id), wardData),
   getAllWards: () => api.get(API_ROUTES.Ward.getAllWard)
 }

@@ -3,7 +3,7 @@
         <dashboardVue title="Patient Details" />
         <div class="sm:ml-64 p-4">
             <section>
-                <div class="grid grid-cols-2 md:grid-cols-2 gap-4">
+                <div class="grid md:grid-cols-2 md:grid-cols-2 gap-4">
                     <div class="col bg-white">
                         <div class=" ">
                             <h1 class="text-indigo-600 p-3 text-2xl border-gray-300 border-b">Patient Details</h1>
@@ -13,7 +13,7 @@
                                         src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
                                         alt="Bonnie Green avatar">
                                 </div>
-                                <table class="min-w-full divide-y divide-gray-200 border border-gray-200">
+                                <table class="max-w-full divide-y divide-gray-200 border border-gray-200">
                                     <tbody class="bg-white divide-y divide-gray-200"
                                         v-if="patient">
                                         <tr class="border-b border-gray-200">
@@ -47,7 +47,7 @@
                                             <td
                                                 class="px-6 py-4 whitespace-nowrap font-medium text-gray-900 border-r border-gray-200">
                                                 Phone</td>
-                                            <td class="px-6 py-4 whitespace-nowrap text-gray-500">{{ patient.phone }}</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-gray-500">{{ patient.contactNumber }}</td>
                                         </tr>
                                         <tr class="border-b border-gray-200">
                                             <td

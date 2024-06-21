@@ -1,10 +1,10 @@
 <template>
   <main>
-    <div v-if="userRole == 'admin'" class="">
+    <div v-if="isAdmin" class="">
       <adminDashboardVue />
     </div>
 
-    <div class="" v-if="userRole == 'doctor'">
+    <div class="" v-if="isDoctor">
       <DoctorDashboard />
     </div>
 
@@ -13,8 +13,10 @@
 
 <script>
 
+import { getUserRole } from '@/helpers/roleHelper';
 import adminDashboardVue from './Admin/adminDashboard.vue'
 import DoctorDashboard from './Doctor/doctorDashboard.vue';
+
 
 
 
@@ -23,8 +25,22 @@ export default {
   components: { adminDashboardVue, DoctorDashboard },
   data() {
     return {
-      userRole: 'admin' // 
+      userRole: ''
     };
+  },
+  computed: {
+    isAdmin() {
+      return this.userRole === 'admin';
+    },
+    isDoctor() {
+      return this.userRole === 'doctor';
+    },
+    isNurse() {
+      return this.userRole === 'nurse';
+    }
+  },
+  created() {
+    this.userRole = getUserRole();
   }
 }
 </script>

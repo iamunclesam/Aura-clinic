@@ -21,7 +21,7 @@
 
 
       <div class="p-4 rounded-lg dark:border-gray-700">
-        <div class="grid grid-cols-3 gap-4 mb-4">
+        <div class="grid md:grid-cols-3 gap-4 mb-4">
           <div class="flex items-center gap-8 h-28 rounded bg-indigo-600 dark:bg-gray-800 px-6">
             <svg xmlns="http://www.w3.org/2000/svg"
               class="rounded-full border border-white-500 p-2 text-white font-extrabold" width="4em" height="4em"

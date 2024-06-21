@@ -20,6 +20,7 @@ import AddNurse from '../views/Nurse/add_nurse.vue'
 import UpdateNurse from '../views/Nurse/update_nurse.vue'
 import NurseDetails from '../views/Nurse/nurse_detail.vue'
 import AllWard from '../views/Ward/all_wards.vue'
+import AdmitPatient from '@/views/Admission/admit_patient.vue'
 import { hasRole } from '@/helpers/roleHelper';
 
 const router = createRouter({
@@ -29,7 +30,7 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
-      meta: { requiresAuth: true,  role: ['doctor']}
+      
     },
 
     {
@@ -52,6 +53,37 @@ const router = createRouter({
     },
 
     {
+      path: '/admission',
+      meta: { breadcrumb: 'Admission' },
+      children: [
+        {
+          path: 'admit',
+          name: 'AdmitPatient',
+          component: AdmitPatient,
+          meta: { breadcrumb: 'Admit Patient', requiresAuth: true, role: ['admin'] }
+        }
+        // {
+        //   path: 'all',
+        //   name: 'AllPatients',
+        //   component: AllPatient,
+        //   meta: { breadcrumb: 'All Patients', requiresAuth: true, role: ['admin', 'doctor']}
+        // },
+        // {
+        //   path: ':patientId/details',
+        //   name: 'PatientDetails',
+        //   component: PatientDetails,
+        //   meta: { breadcrumb: 'Patient Details', requiresAuth: true, role: ['admin', 'doctor'] }
+        // },
+        // {
+        //   path: 'edit',
+        //   name: 'UpdatePatient',
+        //   component: UpdatePatient,
+        //   meta: { breadcrumb: 'Edit Patient' }
+        // }
+      ]
+    },
+
+    {
       path: '/patient',
       meta: { breadcrumb: 'Patient' },
       children: [
@@ -65,7 +97,7 @@ const router = createRouter({
           path: 'all',
           name: 'AllPatients',
           component: AllPatient,
-          meta: { breadcrumb: 'All Patients', requiresAuth: true, role: ['doctor']}
+          meta: { breadcrumb: 'All Patients', requiresAuth: true, role: ['admin', 'doctor']}
         },
         {
           path: ':patientId/details',
@@ -90,21 +122,21 @@ const router = createRouter({
           path: 'add',
           name: 'AddDoctor',
           component: AddDoctor,
-          meta: { breadcrumb: 'Add Doctor',requiresAuth: true, role: ['doctor'] }
+          meta: { breadcrumb: 'Add Doctor',requiresAuth: true, role: ['admin', 'doctor'] }
         },
 
         {
           path: 'all',
           name: 'AllDoctor',
           component: AllDoctor,
-          meta: { breadcrumb: 'All Doctors', requiresAuth: true, role: ['doctor'] }
+          meta: { breadcrumb: 'All Doctors', requiresAuth: true, role: ['admin', 'doctor'] }
         },
 
         {
           path: 'assigned-patient',
           name: 'AssignedPatient',
           component: AssignedPatient,
-          meta: { breadcrumb: 'Assigned Patient', requiresAuth: true, role: ['doctor'] }
+          meta: { breadcrumb: 'Assigned Patient', requiresAuth: true, role: ['admin', 'doctor'] }
         },
 
         {
@@ -118,7 +150,7 @@ const router = createRouter({
           path: ':doctorId/details',
           name: 'DoctorDetails',
           component: DoctorDetails,
-          meta: { breadcrumb: 'Doctor Details', requiresAuth: true, role: ['doctor'] }
+          meta: { breadcrumb: 'Doctor Details', requiresAuth: true, role: ['admin', 'doctor'] }
         }
       ]
     },

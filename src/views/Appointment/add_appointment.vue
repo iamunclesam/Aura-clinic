@@ -4,7 +4,7 @@
         <div class="sm:ml-64 p-4">
             <section class="bg-white dark:bg-gray-900">
                 <div class=" mx-auto p-4">
-                    <h2 class="mb-4 text-2xl font-normal text-pink-500 dark:text-white">Add Appointment</h2>
+                    <h2 class="mb-4 text-2xl font-normal text-indigo-600 dark:text-white">Add Appointment</h2>
                     <form action="#">
                         <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
 
@@ -79,7 +79,7 @@
                             </div>
                         </div>
                         <button type="submit"
-                            class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-pink-700 rounded focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
+                            class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-indigo-700 rounded focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
                             Submit
                         </button>
                     </form>

@@ -8,6 +8,10 @@ const API_ROUTES = {
     login: `${BASE_URL}/user/login`,
   },
 
+  Admin: {
+    admitPatient: `${BASE_URL}/admin/admit-patient`
+  },
+
   Doctor: {
     createDoctor: `${BASE_URL}/doctor/create`,
     getDoctorById: (id) => `${BASE_URL}/doctor/${id}/details`,
@@ -44,15 +48,12 @@ const API_ROUTES = {
     createDepartment: `${BASE_URL}/department/create`,
     getDepartmentById: (id) => `${BASE_URL}/department/${id}`,
     updateDepartmentById: (id) => `${BASE_URL}/department/${id}/update`,
-    getAllDepartment: `${BASE_URL}/department`,
+    getAllDepartment: `${BASE_URL}/departments`,
     addDoctorToDepartment: (departmentId, doctorId) => `${BASE_URL}/department/${departmentId}/doctor/${doctorId}`,
   },
 
    Ward: {
-    createNurse: `${BASE_URL}/ward/create`,
-    getNurseById: (id) => `${BASE_URL}/ward/${id}`,
-    updateNurseById: (id) => `${BASE_URL}/ward/${id}/update`,
-    getAllNurse: `${BASE_URL}/ward`
+   getWardByDepartment: (id) => `${BASE_URL}/departments/${id}/wards`
   },
 
  

@@ -44,8 +44,8 @@
                         </RouterLink>
                     </li>
 
-                     <!-- Patients (visible to Admin and Doctor) -->
-                     <li v-if="userRole === 'doctor'">
+                    <!-- Patients (visible to Admin and Doctor) -->
+                    <li v-if="userRole === 'doctor'">
                         <RouterLink to="/doctor/assigned-patient"
                             class="flex items-center w-full p-2 px-5 text-base text-white transition duration-75 rounded-lg group">
                             <Icon class="flex-shrink-0 w-4 h-4 text-white transition duration-75" icon="maki:wheelchair"
@@ -77,8 +77,8 @@
                         </RouterLink>
                     </li>
 
-                     <!-- Nurse (visible to Admin only) -->
-                     <li v-if="userRole === 'admin'">
+                    <!-- Nurse (visible to Admin only) -->
+                    <li v-if="userRole === 'admin'">
                         <RouterLink to="/nurse/all"
                             class="flex items-center w-full p-2 px-5 text-base text-white transition duration-75 rounded-lg group">
                             <Icon class="flex-shrink-0 w-4 h-4 text-white transition duration-75 "
@@ -88,8 +88,8 @@
                         </RouterLink>
                     </li>
 
-                     <!-- Nurse (visible to Admin only) -->
-                     <li v-if="userRole === 'admin'">
+                    <!-- Nurse (visible to Admin only) -->
+                    <li v-if="userRole === 'admin'">
                         <RouterLink to="/ward/all"
                             class="flex items-center w-full p-2 px-5 text-base text-white transition duration-75 rounded-lg group">
                             <Icon class="flex-shrink-0 w-4 h-4 text-white transition duration-75 "
@@ -101,7 +101,8 @@
 
                     <!-- Admission (visible to Admin and Nurse) -->
                     <li v-if="userRole === 'admin' || userRole === 'nurse'">
-                        <button type="button" to="/admission/all"  aria-controls="dropdown-exampleTAd" data-collapse-toggle="dropdown-exampleAd"
+                        <button type="button" to="/admission/all" aria-controls="dropdown-exampleTAd"
+                            data-collapse-toggle="dropdown-exampleAd"
                             class="flex items-center w-full p-2 px-5 text-base text-white transition duration-75 rounded-lg group">
                             <Icon class="flex-shrink-0 w-4 h-4 text-white transition duration-75 "
                                 icon="material-symbols:ward-outline" width="4em" height="4em" />
@@ -116,7 +117,7 @@
                         </button>
                         <ul id="dropdown-exampleAd" class="hidden bg-[#666666] py-2 space-y-2">
                             <li>
-                                <RouterLink to="/appointment/add"
+                                <RouterLink to="/admission/admit"
                                     class="flex items-center w-full p-2 text-white text-sm transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                                     Admit patient</RouterLink>
                             </li>
@@ -305,13 +306,15 @@
                 </ul>
             </div>
         </aside>
-       
+
     </main>
 </template>
 
 <script>
+import { getUserRole } from '@/helpers/roleHelper';
 import { Icon } from '@iconify/vue';
 import { initFlowbite } from 'flowbite';
+
 
 
 export default {
@@ -323,8 +326,22 @@ export default {
     },
     data() {
         return {
-            userRole: 'doctor' // This can be 'admin', 'doctor', 'nurse', or any other role you have
+            userRole: ''
         };
+    },
+    computed: {
+        isAdmin() {
+            return this.userRole === 'admin';
+        },
+        isDoctor() {
+            return this.userRole === 'doctor';
+        },
+        isNurse() {
+            return this.userRole === 'nurse';
+        }
+    },
+    created() {
+        this.userRole = getUserRole();
     }
 }
 </script>
@@ -333,21 +350,21 @@ export default {
 /* Your styles here */
 
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+    width: 5px;
+    height: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 1rem;
-  background: #030e3c;
-  transition: all 0.5s ease-in-out;
+    border-radius: 1rem;
+    background: #030e3c;
+    transition: all 0.5s ease-in-out;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #252525;
+    background: #252525;
 }
 
 ::-webkit-scrollbar-track {
-  background: #ffffff84;
+    background: #ffffff84;
 }
 </style>

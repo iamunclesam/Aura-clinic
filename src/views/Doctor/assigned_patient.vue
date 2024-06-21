@@ -137,7 +137,7 @@
                                         </th>
                                         <th scope="col" class="px-4 py-3">Patient Id</th>
                                         <th scope="col" class="px-4 py-3">Patient Name</th>
-                                        <th scope="col" class="px-4 py-3">Age</th>
+                                        <th scope="col" class="px-4 py-3">Gender</th>
                                         <th scope="col" class="px-4 py-3">Phone</th>
                                         <th scope="col" class="px-4 py-3">Email</th>
                                         <th scope="col" class="px-4 py-3">Status</th>
@@ -171,12 +171,12 @@
                                         <td
                                             class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                             <div class="flex items-center">
-                                                {{ patient.age }}
+                                                {{ patient.gender }}
                                             </div>
                                         </td>
                                         <td
                                             class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                            {{ patient.phone }}</td>
+                                            {{ patient.contactNumber }}</td>
                                         <td
                                             class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                             {{ patient.email }}</td>
