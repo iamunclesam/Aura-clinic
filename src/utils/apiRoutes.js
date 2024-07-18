@@ -13,7 +13,7 @@ const API_ROUTES = {
   },
 
   Doctor: {
-    createDoctor: `${BASE_URL}/doctor/create`,
+    createDoctor: `${BASE_URL}/admin/create-doctor`,
     getDoctorById: (id) => `${BASE_URL}/doctor/${id}/details`,
     updateDoctorById: (id) => `${BASE_URL}/doctor/${id}/update`,
     getAllDoctors: `${BASE_URL}/doctors`,

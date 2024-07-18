@@ -60,7 +60,7 @@
             <div class="content">
               <p class="text-green-600 text-sm">Appointments</p>
               <h1 class="text-3xl text-green-500 py-1 text-gray-900 dark:text-gray-500">
-                2258
+                0
               </h1>
               <p class="text-xs flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-500 " width="2em" height="2em"
@@ -91,7 +91,7 @@
             <div class="content">
               <p class="text-orange-400 text-sm">Total Revenue</p>
               <h1 class="text-3xl text-orange-400 py-1 dark:text-gray-500">
-                $5000
+                $0
               </h1>
               <p class="text-xs flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-500 " width="2em" height="2em"

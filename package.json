@@ -12,6 +12,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.15.0",
     "axios": "^1.7.2",
     "chart.js": "^4.4.3",
     "flowbite": "^2.3.0",

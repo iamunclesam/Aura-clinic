@@ -19,13 +19,13 @@
                 <h1 class="text-left px-6 text-3xl text-white">BLISS CLINIC</h1>
                 <ul class=" font-light mt-10">
 
-                    <li class="bg-gray-700 px-3">
+                    <li  class="px-3">
                         <RouterLink to="/"
                             class="flex items-center w-full p-2 text-base text-white transition duration-75 rounded-lg group">
                             <svg class="flex-shrink-0 w-4 h-4 text-white transition duration-75 "
                                 xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 15 15">
                                 <path fill="currentColor" fill-rule="evenodd"
-                                    d="M7.08.222a.6.6 0 0 1 .84 0l6.75 6.64a.6.6 0 0 1-.84.856L13 6.902V12.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5V6.902l-.83.816a.6.6 0 1 1-.84-.856zm.42 1.27L12 5.918V12h-2V8.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5V12H3V5.918zM7 12h2V9H7z"
+                                    d="M7.08.222a.6.6 0 0 1 .84 0l6.75 6.64a.6.6 0 0 1-.84.856L13 6.902V12.5a.5.5 0 0 1-.5.---5h-10a.5.5 0 0 1-.5-.5V6.902l-.83.816a.6.6 0 1 1-.84-.856zm.42 1.27L12 5.918V12h-2V8.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5V12H3V5.918zM7 12h2V9H7z"
                                     clip-rule="evenodd" />
                             </svg>
                             <span
@@ -34,7 +34,7 @@
                     </li>
 
                     <!-- Patients (visible to Admin and Doctor) -->
-                    <li v-if="userRole === 'admin'">
+                    <li @click="ifActive" v-if="userRole === 'admin'" :class="isActive ? 'bg-gray-700' : 'none'">
                         <RouterLink to="/patient/all"
                             class="flex items-center w-full p-2 px-5 text-base text-white transition duration-75 rounded-lg group">
                             <Icon class="flex-shrink-0 w-4 h-4 text-white transition duration-75" icon="maki:wheelchair"
@@ -326,9 +326,17 @@ export default {
     },
     data() {
         return {
-            userRole: ''
+            userRole: '',
+            isActive: false
         };
     },
+    methods: {
+        ifActive() {
+            this.isActive = true;
+            console.log("Made true");
+        }
+    },
+
     computed: {
         isAdmin() {
             return this.userRole === 'admin';

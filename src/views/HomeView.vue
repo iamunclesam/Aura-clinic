@@ -17,10 +17,6 @@ import { getUserRole } from '@/helpers/roleHelper';
 import adminDashboardVue from './Admin/adminDashboard.vue'
 import DoctorDashboard from './Doctor/doctorDashboard.vue';
 
-
-
-
-
 export default {
   components: { adminDashboardVue, DoctorDashboard },
   data() {
@@ -40,7 +36,16 @@ export default {
     }
   },
   created() {
-    this.userRole = getUserRole();
+    let user = getUserRole();
+    // setTimeout(function () {
+    // 
+    // }, 2000);
+    if (user) {
+      this.userRole = getUserRole();
+    }
+   
+    console.log(user);
+
   }
 }
 </script>

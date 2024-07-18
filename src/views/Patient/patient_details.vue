@@ -13,7 +13,7 @@
                                         src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
                                         alt="Bonnie Green avatar">
                                 </div>
-                                <table class="max-w-full divide-y divide-gray-200 border border-gray-200">
+                                <table class="min-w-full divide-y divide-gray-200 border border-gray-200">
                                     <tbody class="bg-white divide-y divide-gray-200"
                                         v-if="patient">
                                         <tr class="border-b border-gray-200">
